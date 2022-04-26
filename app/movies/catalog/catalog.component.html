@@ -1,0 +1,40 @@
+<div>
+  <h1 class="title text-center h1-responsive">Top Rated Movies </h1>
+</div> 
+  
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Loop Popular movies, limit result with slice -->
+        <div
+          class="col-4 col-md-4 col-lg-2 my-3 px-2 px-md-4"
+          *ngFor="let item of topRated " >
+ <!-- Is there a poster -->
+ <div *ngIf="item.poster_path !== null; else noPic">
+  <a class="view overlay zoom" routerLink="/catalog/{{ item.id }}">
+    <img
+      class="poster-img hoverable"
+      src="https://image.tmdb.org/t/p/w400/{{ item.poster_path }}"
+      title="{{ item.title }}"
+      alt="{{ item.title }}"
+    />
+  </a>
+ <p> "{{ item.title }}" </p>
+</div>
+
+<!-- Missing image placeholder -->
+<ng-template #noPic>
+  <a class="view overlay zoom" routerLink="/catalog/{{ item.id }}">
+    <div
+      class="hoverable mb-3 img-placeholder row flex-row align-content-center justify-content-center"
+    >
+      <h5 class="missing-img-title col h5 heading">{{ item.title }}</h5>
+    </div>
+  </a>
+</ng-template>
+</div>
+</div>
+<div >
+<button id="submit" class="btn btn-primary btn-lg btn-block" (click)="logout()" >Logout</button>
+</div>       
+</div>
+

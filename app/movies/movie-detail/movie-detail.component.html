@@ -1,0 +1,61 @@
+<div class="container-fluid">
+<div class=''>
+    <div  class="row text-center">
+        <img class="img-thumbnail" src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ movie?.poster_path }}">
+    </div>
+</div>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="block">
+            <label for="ti">Title:</label>
+            {{ movie?.title }}
+    </div>
+   
+    </div>
+    <div class="row">
+     <div class="block">
+    <label for="ad"> For Adults:</label>
+    {{ movie?.adult }}
+     </div>
+    </div>
+    <div class="row">
+   <div class="block">
+    <label for="lan">Language:</label>
+         {{ movie?.original_language}} 
+</div>
+</div>
+<div class="row">
+<div class="block">
+    <label for="da">Release Date: </label>
+     {{ movie?.release_date}}  
+</div>
+</div>
+<div class="row">
+<div class="block">
+    <label for="su">summary:</label>
+   {{ movie?.overview }}
+</div>
+</div>
+<div class="row">
+<div class="block">
+    <label for="tag">TagLine:</label>
+    {{ movie?.tagline}}
+</div>
+</div>
+</div>
+<div >
+    <button id="submit" class="btn btn-primary btn-lg btn-block" (click)="logout()" >Logout</button>
+    </div>  
+</div>
+
+
+
+
+
+
+
+
+
+
+
